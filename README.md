@@ -22,6 +22,7 @@ To install, there are two steps:
   react-native link
   ```
 3. Run the project with react-native run command.
+
   Android
   ```bash
   react-native run-android
