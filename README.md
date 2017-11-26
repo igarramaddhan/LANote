@@ -4,8 +4,8 @@
 
 This repository is my react native journey to improve my coding style. Just try clone it if you want to learn it 😆
 
-![demo](https://i.imgur.com/51t73Ht.png)
-![demo](https://i.imgur.com/pRd7v5o.png)
+![demo](https://i.imgur.com/51t73Ht.png?1)
+![demo](https://i.imgur.com/pRd7v5o.png?1)
 
 ## Run it locally
 
