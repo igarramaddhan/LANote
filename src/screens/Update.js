@@ -10,7 +10,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Button from '../components/Button'
 
-export default class Add extends Component<{}> {
+export default class Update extends Component<{}> {
 	static navigationOptions = {
 		headerRight:
 			<View style={{padding: 20, justifyContent: 'center', alignItems: 'center'}}>
@@ -20,15 +20,24 @@ export default class Add extends Component<{}> {
 	constructor() {
 		super()
 		this.state = {
+			id: '',
 			title: '',
 			desc: ''
 		}
 		this.focusNextField = this.focusNextField.bind(this)
 		this.inputs = {}
 	}
-
-	addNote() {
-		this.props.navigation.addNote({
+	componentWillMount() {
+		const { id, title, description } = this.props.navigation.state.params
+		this.setState({
+			id: id,
+			title: title,
+			desc: description
+		})
+	}
+	updateNote() {
+		this.props.navigation.updateNote({
+			id: this.state.id,
 			title: this.state.title,
 			description: this.state.desc
 		})
@@ -74,9 +83,9 @@ export default class Add extends Component<{}> {
 						/>
 					</View>
 					<Button
-						title='ADD'
+						title='UPDATE'
 						onPress={() => {
-							this.addNote()
+							this.updateNote()
 						}}
 					/>
 				</View>
@@ -98,7 +107,7 @@ const styles = StyleSheet.create({
 		margin: 10,
 	},
 	textInputContainer: {
-		flex: 1,
+		flex: 1
 	},
 	inputTitleStyle: {
 		height: 60,
